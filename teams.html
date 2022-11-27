@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
-
-<head>
+  <head>
     <title>Teams | SVCE ACM Student chapter</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="title" content="ACM Student Chapter @SVCE" />
@@ -10,1173 +9,1400 @@
     <meta property="og:title" content="ACM Student Chapter @SVCE" />
     <meta property="og:description" content="ACM Student Chapter of SVCE" />
     <meta property="twitter:title" content="ACM Student Chapter @SVCE" />
-    <meta property="twitter:description" content="ACM Student Chapter of SVCE" />
+    <meta
+      property="twitter:description"
+      content="ACM Student Chapter of SVCE"
+    />
     <link rel="icon" href="favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="css/bootstrap.min.css" />
     <link rel="stylesheet" href="css/global.css" />
     <link rel="stylesheet" href="css/nav.css" />
     <link rel="stylesheet" href="css/tab.css" />
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
-        integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+      integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
+      crossorigin="anonymous"
+    />
     <link rel="stylesheet" href="css/swiper.min.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.css" />
-    <link href="https://fonts.googleapis.com/css?family=Exo+2:400,500,600" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Exo+2:400,500,600"
+      rel="stylesheet"
+    />
     <style>
+      .tab {
+        width: 50%;
+        min-width: 700px;
+        padding: 5px;
+      }
+
+      .team-member {
+        margin-bottom: 50px;
+        text-align: center;
+      }
+
+      .team-member img {
+        width: 225px;
+        height: 225px;
+        image-orientation: 10%;
+      }
+
+      .img-container {
+        width: 225px;
+        height: 225px;
+        position: relative;
+        margin: 0 auto;
+      }
+
+      .img-container img {
+        width: 225px;
+        height: 225px;
+        object-fit: cover;
+      }
+
+      .overlay {
+        position: absolute;
+        display: flex;
+        height: 100%;
+        width: 100%;
+        background: rgba(34, 34, 34, 0.85);
+        top: 0;
+        left: 0;
+        opacity: 0;
+        justify-content: center;
+        align-items: center;
+        transition: opacity 0.5s;
+        z-index: 5;
+        border-radius: 50%;
+        color: white;
+      }
+
+      .overlay:hover {
+        opacity: 1;
+      }
+
+      .team-member h4 {
+        margin-top: 25px;
+        margin-bottom: 0;
+        text-transform: none;
+        color: whitesmoke;
+      }
+
+      .team-member p {
+        color: #aaa;
+        margin-top: 0;
+      }
+
+      #year-link {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-bottom: 1.5rem;
+      }
+
+      #year-link a {
+        color: #000;
+        background-color: #83cee2;
+        border-radius: 15px;
+        margin-left: 30px;
+        padding: 10px;
+      }
+
+      @media (max-width: 768px) {
         .tab {
-            width: 50%;
-            min-width: 700px;
-            padding: 5px;
+          width: 100%;
+          min-width: 200px;
         }
+      }
 
-        .team-member {
-            margin-bottom: 50px;
-            text-align: center;
-        }
-
-        .team-member img {
-            width: 225px;
-            height: 225px;
-            image-orientation: 10%;
-        }
-
-        .img-container {
-            width: 225px;
-            height: 225px;
-            position: relative;
-            margin: 0 auto;
-        }
-
-        .img-container img {
-            width: 225px;
-            height: 225px;
-            object-fit: cover;
-        }
-
-        .overlay {
-            position: absolute;
-            display: flex;
-            height: 100%;
-            width: 100%;
-            background: rgba(34, 34, 34, 0.85);
-            top: 0;
-            left: 0;
-            opacity: 0;
-            justify-content: center;
-            align-items: center;
-            transition: opacity 0.5s;
-            z-index: 5;
-            border-radius: 50%;
-            color: white;
-        }
-
-        .overlay:hover {
-            opacity: 1;
-        }
-
-        .team-member h4 {
-            margin-top: 25px;
-            margin-bottom: 0;
-            text-transform: none;
-            color: whitesmoke;
-        }
-
-        .team-member p {
-            color: #aaa;
-            margin-top: 0;
-        }
-
-        #year-link {
-            display: flex;
-            flex-direction: row;
-            flex-wrap: wrap;
-            justify-content: center;
-            margin-bottom: 1.5rem;
-        }
-
-        #year-link a {
-            color: #000;
-            background-color: #83cee2;
-            border-radius: 15px;
-            margin-left: 30px;
-            padding: 10px;
-        }
-
-        @media (max-width: 768px) {
-            .tab {
-                width: 100%;
-                min-width: 200px;
-            }
-        }
-
-        a {
-            text-decoration: none !important;
-        }
+      a {
+        text-decoration: none !important;
+      }
     </style>
-</head>
+  </head>
 
-<body id="teams-page">
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top navbar-shrink animated fadeInDown" id="mainNav">
-        <div class="container">
-            <a class="navbar-brand js-scroll-trigger" href="#page-top"><img src="images/logos/svce_acm_2.png" /></a>
-            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
-                data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
-                aria-label="Toggle navigation">
-                Menu
-            </button>
-            <div class="collapse navbar-collapse" id="navbarResponsive">
-                <ul class="navbar-nav text-uppercase ml-auto">
-                    <li class="nav-item">
-                        <a class="nav-link js-scroll-trigger" href="index.html">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link js-scroll-trigger" href="about.html">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link js-scroll-trigger" href="events.html">Events</a>
-                    </li>
-                    <li class="nav-item active">
-                        <a class="nav-link js-scroll-trigger active">Team</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link js-scroll-trigger" href="contact.php">Contact</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link js-scroll-trigger" href="career.html">Career Center</a>
-                    </li>
-                </ul>
-            </div>
+  <body id="teams-page">
+    <nav
+      class="navbar navbar-expand-lg navbar-dark fixed-top navbar-shrink animated fadeInDown"
+      id="mainNav"
+    >
+      <div class="container">
+        <a class="navbar-brand js-scroll-trigger" href="#page-top"
+          ><img src="images/logos/svce_acm_2.png"
+        /></a>
+        <button
+          class="navbar-toggler navbar-toggler-right"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarResponsive"
+          aria-controls="navbarResponsive"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          Menu
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav text-uppercase ml-auto">
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="about.html">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="events.html"
+                >Events</a
+              >
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link js-scroll-trigger active">Team</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="contact.php"
+                >Contact</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="career.html"
+                >Career Center</a
+              >
+            </li>
+          </ul>
         </div>
+      </div>
     </nav>
     <!-- #nav -->
     <div class="wrapper animated fadeIn">
-        <section class="page-head parallax-bg">
-            <div class="container v-center test">
-                <h1 class="text-center page-title">Our Teams</h1>
-                <h3 class="text-center page-subtitle">Meet our members!</h3>
+      <section class="page-head parallax-bg">
+        <div class="container v-center test">
+          <h1 class="text-center page-title">Our Teams</h1>
+          <h3 class="text-center page-subtitle">Meet our members!</h3>
+        </div>
+      </section>
+      <!-- .page-head -->
+      <section class="page-content">
+        <div class="container">
+          <div class="tab container h-100">
+            <nav class="tabs container-fluid v-center">
+              <div class="row v-center">
+                <div class="col-xs-2 offset-xs-1">
+                  <a data-toggle="tab" href="#office-bearers" class="active"
+                    ><i class="fas fa-briefcase"></i> Office Bearers</a
+                  >
+                </div>
+                <!-- .col-xs-2 -->
+                <div class="col-xs-2">
+                  <a data-toggle="tab" href="#executive_members"
+                    ><i class="fas fa-calendar-check"></i>
+                    Executive Members
+                  </a>
+                </div>
+                <!-- .col-xs-2 -->
+                <div class="col-xs-2">
+                  <a data-toggle="tab" href="#past-board-members"
+                    ><i class="fas fa-users"></i> Past Board Members
+                  </a>
+                </div>
+                <!-- .col-xs-2 -->
+              </div>
+              <!-- .row -->
+            </nav>
+          </div>
+        </div>
+        <div class="container-fluid v-center">
+          <div
+            id="office-bearers"
+            class="type team container-fluid active animated fadeIn slower"
+          >
+            <!-- OFFICE BEARERS -->
+            <div class="row">
+              <div class="col-lg-4 col-md-4 col-sm-6 offset-lg-2 offset-md-2">
+                <a
+                  href="https://www.instagram.com/nikhileshh_?igshid=eh0z3vhxfnd9"
+                >
+                  <div class="team-member">
+                    <div class="img-container">
+                      <img
+                        class="mx-auto rounded-circle"
+                        src="images\ACM Members\Board members-20210824T130729Z-001\Board members\niklesh.jpg"
+                        alt=""
+                      />
+                      <div class="overlay">
+                        <i class="fab fa-instagram fa-4x fa-fw"></i>
+                      </div>
+                      <!-- .overlay -->
+                    </div>
+                    <!-- .img-container -->
+                    <h4>S Nikhilesh</h4>
+                    <p>Chair</p>
+                  </div>
+                </a>
+              </div>
+              <div class="col-lg-4 col-md-4 col-sm-6">
+                <a href="https://www.instagram.com/sandyy_2200/?hl=en">
+                  <div class="team-member">
+                    <div class="img-container">
+                      <img
+                        class="mx-auto rounded-circle"
+                        src="images\ACM Members\Board members-20210824T130729Z-001\Board members\sandhya.jpg"
+                        alt=""
+                      />
+                      <div class="overlay">
+                        <i class="fab fa-instagram fa-4x fa-fw"></i>
+                      </div>
+                      <!-- .overlay -->
+                    </div>
+                    <!-- .img-container -->
+                    <h4>Sandhya V</h4>
+                    <p>Vice Chair</p>
+                  </div>
+                </a>
+              </div>
             </div>
-        </section>
-        <!-- .page-head -->
-        <section class="page-content">
+            <div class="row">
+              <div class="col-lg-4 col-md-4 col-sm-6">
+                <a
+                  href="https://www.linkedin.com/in/pranav-devulapalli-967697137/"
+                >
+                  <div class="team-member">
+                    <div class="img-container">
+                      <img
+                        class="mx-auto rounded-circle"
+                        src="images/members22-23/PRANAV D S CS.png"
+                        alt=""
+                      />
+                      <div class="overlay">
+                        <i class="fab fa-linkedin-in fa-4x fa-fw"></i>
+                      </div>
+                      <!-- .overlay -->
+                    </div>
+                    <!-- .img-container -->
+                    <h4>Pranav DS</h4>
+                    <p>Secretary</p>
+                  </div>
+                </a>
+              </div>
+              <div class="col-lg-4 col-md-4 col-sm-6">
+                <a href="https://www.instagram.com/nithishbalasubramaniyan">
+                  <div class="team-member">
+                    <div class="img-container">
+                      <img
+                        class="mx-auto rounded-circle"
+                        src="images/ACM Members/Executive members-20210824T130818Z-001/Executive members/Nithish Kumar.jpg"
+                        alt=""
+                      />
+                      <div class="overlay">
+                        <i class="fab fa-instagram fa-4x fa-fw"></i>
+                      </div>
+                      <!-- .overlay -->
+                    </div>
+                    <!-- .img-container -->
+                    <h4>Nithish Kumar B</h4>
+                    <p>Treasurer</p>
+                  </div>
+                </a>
+              </div>
+              <div class="col-lg-4 col-md-4 col-sm-6 offset-md-0 offset-sm-3">
+                <a href="https://www.instagram.com/madhumita2002/">
+                  <div class="team-member">
+                    <div class="img-container">
+                      <img
+                        class="mx-auto rounded-circle"
+                        src="images/ACM Members/Executive members-20210824T130818Z-001/Executive members/Madhu photo - 1084 MADHUMITA R CS.jpeg"
+                        alt=""
+                      />
+                      <div class="overlay">
+                        <i class="fab fa-instagram fa-4x fa-fw"></i>
+                      </div>
+                      <!-- .overlay -->
+                    </div>
+                    <!-- .img-container -->
+                    <h4>Madhumita R</h4>
+                    <p>
+                      Chair, ACM-W <br />
+                      Member Chair
+                    </p>
+                  </div>
+                </a>
+              </div>
+
+              <div class="col-lg-4 col-md-4 col-sm-6">
+                <a href="https://instagram.com/neha2_7">
+                  <div class="team-member">
+                    <div class="img-container">
+                      <img
+                        class="mx-auto rounded-circle"
+                        src="images/members22-23/Neha Bhende.png"
+                        alt=""
+                      />
+                      <div class="overlay">
+                        <i class="fab fa-instagram fa-4x fa-fw"></i>
+                      </div>
+                      <!-- .overlay -->
+                    </div>
+                    <!-- .img-container -->
+                    <h4>Neha Bhende</h4>
+                    <p>Vice Chair, ACM-W</p>
+                  </div>
+                </a>
+              </div>
+
+              <div class="col-lg-4 col-md-4 col-sm-6">
+                <a href="https://www.linkedin.com/in/poujhit-mu">
+                  <div class="team-member">
+                    <div class="img-container">
+                      <img
+                        class="mx-auto rounded-circle"
+                        src="images/ACM Members//Executive members-20210824T130818Z-001/Executive members/Poujhit.jpg"
+                        alt=""
+                      />
+                      <div class="overlay">
+                        <i class="fab fa-linkedin-in fa-4x fa-fw"></i>
+                      </div>
+                      <!-- .overlay -->
+                    </div>
+                    <!-- .img-container -->
+                    <h4>Poujhit MU</h4>
+                    <p>Webmaster</p>
+                  </div>
+                </a>
+              </div>
+            </div>
+            <!--Board-->
+          </div>
+          <!-- EXECUTIVE MEMBERS -->
+          <div
+            id="executive_members"
+            class="type team container-fluid animated fadeIn slower"
+          >
+            <div class="row">
+              <div class="col-lg-4 col-md-4 col-sm-6 offset-lg-2 offset-md-2">
+                <a href="https://www.linkedin.com/in/keerthana-s-3a937a1b0">
+                  <div class="team-member">
+                    <div class="img-container">
+                      <img
+                        class="mx-auto rounded-circle"
+                        src="images/members22-23/Keerthana S.png"
+                        alt=""
+                      />
+                      <div class="overlay">
+                        <i class="fab fa-linkedin-in fa-4x fa-fw"></i>
+                      </div>
+                      <!-- .overlay -->
+                    </div>
+                    <!-- .img-container -->
+                    <h4>Keerthana S</h4>
+                    <p>Senior Executive Member</p>
+                  </div>
+                </a>
+              </div>
+              <div class="col-lg-4 col-md-4 col-sm-6">
+                <a href="https://www.linkedin.com/in/srilekha-y/">
+                  <div class="team-member">
+                    <div class="img-container">
+                      <img
+                        class="mx-auto rounded-circle"
+                        src="images/members22-23/Srilekha Y.png"
+                        alt=""
+                      />
+                      <div class="overlay">
+                        <i class="fab fa-linkedin-in fa-4x fa-fw"></i>
+                      </div>
+                      <!-- .overlay -->
+                    </div>
+                    <!-- .img-container -->
+                    <h4>Srilekha Y</h4>
+                    <p>Senior Executive Member</p>
+                  </div>
+                </a>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-lg-4 col-md-4 col-sm-6">
+                <a href="https://www.linkedin.com/in/sadana-u-1609121b3/">
+                  <div class="team-member">
+                    <div class="img-container">
+                      <img
+                        class="mx-auto rounded-circle"
+                        src="images/ACM Members/Executive members-20210824T130818Z-001/Executive members/Sadana U.jpg"
+                        alt=""
+                      />
+                      <div class="overlay">
+                        <i class="fab fa-linkedin-in fa-4x fa-fw"></i>
+                      </div>
+                      <!-- .overlay -->
+                    </div>
+                    <!-- .img-container -->
+                    <h4>Sadana U</h4>
+                    <p>Senior Executive Member</p>
+                  </div>
+                </a>
+              </div>
+              <div class="col-lg-4 col-md-4 col-sm-6">
+                <a href="https://www.linkedin.com/in/rajsudhan-m-12791a204">
+                  <div class="team-member">
+                    <div class="img-container">
+                      <img
+                        class="mx-auto rounded-circle"
+                        src="images/ACM Members/Executive members-20210824T130818Z-001/Executive members/Rajsudhan Anand.jpg"
+                        alt=""
+                      />
+                      <div class="overlay">
+                        <i class="fab fa-linkedin-in fa-4x fa-fw"></i>
+                      </div>
+                      <!-- .overlay -->
+                    </div>
+                    <!-- .img-container -->
+                    <h4>Rajsudhan M</h4>
+                    <p>Senior Executive Member</p>
+                  </div>
+                </a>
+              </div>
+              <div class="col-lg-4 col-md-4 col-sm-6">
+                <a href="http://linkedin.com/in/harshitha-jayakumar-76aab21bb">
+                  <div class="team-member">
+                    <div class="img-container">
+                      <img
+                        class="mx-auto rounded-circle"
+                        src="images/members22-23/Harshitha - HARSHITHA J CS.png"
+                        alt=""
+                      />
+                      <div class="overlay">
+                        <i class="fab fa-linkedin-in fa-4x fa-fw"></i>
+                      </div>
+                      <!-- .overlay -->
+                    </div>
+                    <!-- .img-container -->
+                    <h4>HARSHITHA JAYAKUMAR</h4>
+                    <p>Senior Executive Member</p>
+                  </div>
+                </a>
+              </div>
+              <div class="col-lg-4 col-md-4 col-sm-6">
+                <a
+                  href="https://www.linkedin.com/in/vaishnavi-manicka-ramesh-598a86244"
+                >
+                  <div class="team-member">
+                    <div class="img-container">
+                      <img
+                        class="rounded-circle"
+                        style="object-fit: contain"
+                        src="images/members22-23/VAISHNAVI M R AD.png"
+                        alt=""
+                      />
+                      <div class="overlay">
+                        <i class="fab fa-linkedin-in fa-4x fa-fw"></i>
+                      </div>
+                      <!-- .overlay -->
+                    </div>
+                    <!-- .img-container -->
+                    <h4>Vaishnavi M R</h4>
+                    <p>Executive Member</p>
+                  </div>
+                </a>
+              </div>
+              <div class="col-lg-4 col-md-4 col-sm-6">
+                <a href="https://instagram.com/_devorak">
+                  <div class="team-member">
+                    <div class="img-container">
+                      <img
+                        class="mx-auto rounded-circle"
+                        src="images/members22-23/Thejaswini Raghu.png"
+                        alt=""
+                      />
+                      <div class="overlay">
+                        <i class="fab fa-instagram fa-4x fa-fw"></i>
+                      </div>
+                      <!-- .overlay -->
+                    </div>
+                    <!-- .img-container -->
+                    <h4>Thejaswini SR</h4>
+                    <p>Executive Member</p>
+                  </div>
+                </a>
+              </div>
+              <div class="col-lg-4 col-md-4 col-sm-6">
+                <a href="https://www.linkedin.com/in/tejasvi-bolla-684a5622a">
+                  <div class="team-member">
+                    <div class="img-container">
+                      <img
+                        class="mx-auto rounded-circle"
+                        src="images/members22-23/TEJASVI BOLLA CSE.png"
+                        alt=""
+                      />
+                      <div class="overlay">
+                        <i class="fab fa-linkedin-in fa-4x fa-fw"></i>
+                      </div>
+                      <!-- .overlay -->
+                    </div>
+                    <!-- .img-container -->
+                    <h4>Tejasvi Bolla</h4>
+                    <p>Executive Member</p>
+                  </div>
+                </a>
+              </div>
+              <div class="col-lg-4 col-md-4 col-sm-6">
+                <a
+                  href="https://www.linkedin.com/in/shwetha-sadanand-854785239"
+                >
+                  <div class="team-member">
+                    <div class="img-container">
+                      <img
+                        class="mx-auto rounded-circle"
+                        style="object-fit: contain"
+                        src="images/members22-23/Shwetha S.png"
+                        alt=""
+                      />
+                      <div class="overlay">
+                        <i class="fab fa-linkedin-in fa-4x fa-fw"></i>
+                      </div>
+                      <!-- .overlay -->
+                    </div>
+                    <!-- .img-container -->
+                    <h4>Shwetha S</h4>
+                    <p>Executive Member</p>
+                  </div>
+                </a>
+              </div>
+              <div class="col-lg-4 col-md-4 col-sm-6">
+                <a
+                  href="https://www.linkedin.com/in/nirupama-rangabashyam-33022922a"
+                >
+                  <div class="team-member">
+                    <div class="img-container">
+                      <img
+                        class="mx-auto rounded-circle"
+                        src="images/members22-23/nirupama rangabashyam.png"
+                        alt=""
+                      />
+                      <div class="overlay">
+                        <i class="fab fa-linkedin-in fa-4x fa-fw"></i>
+                      </div>
+                      <!-- .overlay -->
+                    </div>
+                    <!-- .img-container -->
+                    <h4>Nirupama R</h4>
+                    <p>Executive Member</p>
+                  </div>
+                </a>
+              </div>
+              <div class="col-lg-4 col-md-4 col-sm-6">
+                <a href="https://www.linkedin.com/in/guru-murthy-k-38631624b">
+                  <div class="team-member">
+                    <div class="img-container">
+                      <img
+                        class="mx-auto rounded-circle"
+                        src="images/members22-23/GURU MURTHY K AI _ DS.png"
+                        alt=""
+                      />
+                      <div class="overlay">
+                        <i class="fab fa-linkedin-in fa-4x fa-fw"></i>
+                      </div>
+                      <!-- .overlay -->
+                    </div>
+                    <!-- .img-container -->
+                    <h4>Guru murthy K</h4>
+                    <p>Executive Member</p>
+                  </div>
+                </a>
+              </div>
+              <div class="col-lg-4 col-md-4 col-sm-6">
+                <a
+                  href="https://www.linkedin.com/in/deepika-govindaswamy-b48851244/"
+                >
+                  <div class="team-member">
+                    <div class="img-container">
+                      <img
+                        class="mx-auto rounded-circle"
+                        src="images/members22-23/DEEPIKA G CS.png"
+                        alt=""
+                      />
+                      <div class="overlay">
+                        <i class="fab fa-linkedin-in fa-4x fa-fw"></i>
+                      </div>
+                      <!-- .overlay -->
+                    </div>
+                    <!-- .img-container -->
+                    <h4>Deepika Govindaswamy</h4>
+                    <p>Executive Member</p>
+                  </div>
+                </a>
+              </div>
+              <div class="col-lg-4 col-md-4 col-sm-6">
+                <a
+                  href="https://www.linkedin.com/in/sreevathsan-venkatesh-731593239"
+                >
+                  <div class="team-member">
+                    <div class="img-container">
+                      <img
+                        class="mx-auto rounded-circle"
+                        src="images/members22-23/Sreevathsan Venkatesh.png"
+                        alt=""
+                      />
+                      <div class="overlay">
+                        <i class="fab fa-linkedin-in fa-4x fa-fw"></i>
+                      </div>
+                      <!-- .overlay -->
+                    </div>
+                    <!-- .img-container -->
+                    <h4>Sreevathsan V</h4>
+                    <p>Executive Member</p>
+                  </div>
+                </a>
+              </div>
+              <div class="col-lg-4 col-md-4 col-sm-6">
+                <a href="https://google.com">
+                  <div class="team-member">
+                    <div class="img-container">
+                      <img
+                        class="mx-auto rounded-circle"
+                        src="images/members22-23/ESHANTHEKA M CSE.png"
+                        alt=""
+                      />
+                      <div class="overlay">
+                        <i class="fab fa-linkedin-in fa-4x fa-fw"></i>
+                      </div>
+                      <!-- .overlay -->
+                    </div>
+                    <!-- .img-container -->
+                    <h4>Eshantheka M</h4>
+                    <p>Executive Member</p>
+                  </div>
+                </a>
+              </div>
+              <div class="col-lg-4 col-md-4 col-sm-6">
+                <a
+                  href="https://instagram.com/_.hariharan.x?igshid=YzdkMWQ2MWU="
+                >
+                  <div class="team-member">
+                    <div class="img-container">
+                      <img
+                        class="mx-auto rounded-circle"
+                        src="images/members22-23/HARIHARAN M CS.png"
+                        alt=""
+                      />
+                      <div class="overlay">
+                        <i class="fab fa-instagram fa-4x fa-fw"></i>
+                      </div>
+                      <!-- .overlay -->
+                    </div>
+                    <!-- .img-container -->
+                    <h4>Hariharan Mohan</h4>
+                    <p>Executive Member</p>
+                  </div>
+                </a>
+              </div>
+              <div class="col-lg-4 col-md-4 col-sm-6">
+                <a
+                  href="https://www.linkedin.com/in/pavadharni-shanmugam-40b210244"
+                >
+                  <div class="team-member">
+                    <div class="img-container">
+                      <img
+                        class="mx-auto rounded-circle"
+                        src="images/members22-23/PAVADHARNI SHANMUGAM AD.png"
+                        alt=""
+                      />
+                      <div class="overlay">
+                        <i class="fab fa-linkedin-in fa-4x fa-fw"></i>
+                      </div>
+                      <!-- .overlay -->
+                    </div>
+                    <!-- .img-container -->
+                    <h4>Pavadharni Shanmugam</h4>
+                    <p>Executive Member</p>
+                  </div>
+                </a>
+              </div>
+              <div class="col-lg-4 col-md-4 col-sm-6">
+                <a href="https://www.linkedin.com/in/jai-ganesh-s-ba5999173">
+                  <div class="team-member">
+                    <div class="img-container">
+                      <img
+                        class="mx-auto rounded-circle"
+                        src="images/members22-23/Jai Ganesh.png"
+                        alt=""
+                      />
+                      <div class="overlay">
+                        <i class="fab fa-linkedin-in fa-4x fa-fw"></i>
+                      </div>
+                      <!-- .overlay -->
+                    </div>
+                    <!-- .img-container -->
+                    <h4>Jai Ganesh</h4>
+                    <p>Executive Member</p>
+                  </div>
+                </a>
+              </div>
+              <div class="col-lg-4 col-md-4 col-sm-6">
+                <a href="https://www.linkedin.com/in/sruthi-v-00b821253">
+                  <div class="team-member">
+                    <div class="img-container">
+                      <img
+                        class="mx-auto rounded-circle"
+                        src="images/members22-23/Sruthi v.png"
+                        alt=""
+                      />
+                      <div class="overlay">
+                        <i class="fab fa-linkedin-in fa-4x fa-fw"></i>
+                      </div>
+                      <!-- .overlay -->
+                    </div>
+                    <!-- .img-container -->
+                    <h4>Sruthi V</h4>
+                    <p>Executive Member</p>
+                  </div>
+                </a>
+              </div>
+              <div class="col-lg-4 col-md-4 col-sm-6">
+                <a href="https://www.github.com/devic1">
+                  <div class="team-member">
+                    <div class="img-container">
+                      <img
+                        class="mx-auto rounded-circle"
+                        src="images/members22-23/Deepak Victor.png"
+                        alt=""
+                      />
+                      <div class="overlay">
+                        <i class="fab fa-github fa-4x fa-fw"></i>
+                      </div>
+                      <!-- .overlay -->
+                    </div>
+                    <!-- .img-container -->
+                    <h4>Deepak Victor</h4>
+                    <p>Executive Member</p>
+                  </div>
+                </a>
+              </div>
+              <div class="col-lg-4 col-md-4 col-sm-6">
+                <a
+                  href="https://instagram.com/_sathiyavel_?igshid=ZDdkNTZiNTM="
+                >
+                  <div class="team-member">
+                    <div class="img-container">
+                      <img
+                        class="mx-auto rounded-circle"
+                        src="images/members22-23/Shree Sathiyavel.png"
+                        alt=""
+                      />
+                      <div class="overlay">
+                        <i class="fab fa-instagram fa-4x fa-fw"></i>
+                      </div>
+                      <!-- .overlay -->
+                    </div>
+                    <!-- .img-container -->
+                    <h4>Shree Sathiyavel</h4>
+                    <p>Executive Member</p>
+                  </div>
+                </a>
+              </div>
+
+              <div class="col-lg-4 col-md-4 col-sm-6">
+                <a href="https://www.instagram.com/krithika._.21?utm_source=qr">
+                  <div class="team-member">
+                    <div class="img-container">
+                      <img
+                        class="mx-auto rounded-circle"
+                        src="images/members22-23/Krithika S.png"
+                        alt=""
+                      />
+                      <div class="overlay">
+                        <i class="fab fa-instagram fa-4x fa-fw"></i>
+                      </div>
+                      <!-- .overlay -->
+                    </div>
+                    <!-- .img-container -->
+                    <h4>KRITHIKA S</h4>
+                    <p>Executive Member</p>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+          <!-- Past Board Members -->
+          <div
+            id="past-board-members"
+            class="type team container-fluid animated fadeIn slower"
+          >
             <div class="container">
-                <div class="tab container h-100">
-                    <nav class="tabs container-fluid v-center">
-                        <div class="row v-center">
-                            <div class="col-xs-2 offset-xs-1">
-                                <a data-toggle="tab" href="#office-bearers" class="active"><i
-                                        class="fas fa-briefcase"></i> Office Bearers</a>
-                            </div>
-                            <!-- .col-xs-2 -->
-                            <div class="col-xs-2">
-                                <a data-toggle="tab" href="#executive_members"><i class="fas fa-calendar-check"></i>
-                                    Executive Members
-                                </a>
-                            </div>
-                            <!-- .col-xs-2 -->
-                            <div class="col-xs-2">
-                                <a data-toggle="tab" href="#past-board-members"><i class="fas fa-users"></i> Past Board
-                                    Members
-                                </a>
-                            </div>
-                            <!-- .col-xs-2 -->
-                        </div>
-                        <!-- .row -->
-                    </nav>
-                </div>
+              <div id="year-link">
+                <a href="#Board-2021">2021</a>
+                <a href="#Board-2020">2020</a>
+                <a href="#Board-2019">2019</a>
+                <a href="#Board-2018">2018</a>
+              </div>
             </div>
-            <div class="container-fluid v-center">
-                <div id="office-bearers" class="type team container-fluid active animated fadeIn slower">
-                    <!-- OFFICE BEARERS -->
-                    <div class="row">
-                        <div class="col-lg-4 col-md-4 col-sm-6 offset-lg-2 offset-md-2">
-                            <a href="https://www.instagram.com/nikhileshh_?igshid=eh0z3vhxfnd9">
-                                <div class="team-member">
-                                    <div class="img-container">
-                                        <img class="mx-auto rounded-circle"
-                                            src="images\ACM Members\Board members-20210824T130729Z-001\Board members\niklesh.jpg"
-                                            alt="" />
-                                        <div class="overlay">
-                                            <i class="fab fa-instagram fa-4x fa-fw"></i>
-                                        </div>
-                                        <!-- .overlay -->
-                                    </div>
-                                    <!-- .img-container -->
-                                    <h4>S Nikhilesh</h4>
-                                    <p>Chair</p>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="col-lg-4 col-md-4 col-sm-6">
-                            <a href="https://www.instagram.com/sandyy_2200/?hl=en">
-                                <div class="team-member">
-                                    <div class="img-container">
-                                        <img class="mx-auto rounded-circle"
-                                            src="images\ACM Members\Board members-20210824T130729Z-001\Board members\sandhya.jpg"
-                                            alt="" />
-                                        <div class="overlay">
-                                            <i class="fab fa-instagram fa-4x fa-fw"></i>
-                                        </div>
-                                        <!-- .overlay -->
-                                    </div>
-                                    <!-- .img-container -->
-                                    <h4>Sandhya V</h4>
-                                    <p>Vice Chair</p>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-4 col-md-4 col-sm-6">
-                            <a href="https://www.linkedin.com/in/pranav-devulapalli-967697137/">
-                                <div class="team-member">
-                                    <div class="img-container">
-                                        <img class="mx-auto rounded-circle" src="images/members22-23/PRANAV D S CS.png"
-                                            alt="" />
-                                        <div class="overlay">
-                                            <i class="fab fa-linkedin-in fa-4x fa-fw"></i>
-                                        </div>
-                                        <!-- .overlay -->
-                                    </div>
-                                    <!-- .img-container -->
-                                    <h4>Pranav DS </h4>
-                                    <p>Secretary</p>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="col-lg-4 col-md-4 col-sm-6">
-                            <a href="https://www.instagram.com/nithishbalasubramaniyan">
-                                <div class="team-member">
-                                    <div class="img-container">
-                                        <img class="mx-auto rounded-circle"
-                                            src="images/ACM Members/Executive members-20210824T130818Z-001/Executive members/Nithish Kumar.jpg"
-                                            alt="" />
-                                        <div class="overlay">
-                                            <i class="fab fa-instagram fa-4x fa-fw"></i>
-                                        </div>
-                                        <!-- .overlay -->
-                                    </div>
-                                    <!-- .img-container -->
-                                    <h4>Nithish Kumar B</h4>
-                                    <p>Treasurer</p>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="col-lg-4 col-md-4 col-sm-6 offset-md-0 offset-sm-3">
-                            <a href="https://www.instagram.com/madhumita2002/">
-                                <div class="team-member">
-                                    <div class="img-container">
-                                        <img class="mx-auto rounded-circle"
-                                            src="images/ACM Members/Executive members-20210824T130818Z-001/Executive members/Madhu photo - 1084 MADHUMITA R CS.jpeg"
-                                            alt="" />
-                                        <div class="overlay">
-                                            <i class="fab fa-instagram fa-4x fa-fw"></i>
-                                        </div>
-                                        <!-- .overlay -->
-                                    </div>
-                                    <!-- .img-container -->
-                                    <h4>Madhumita R</h4>
-                                    <p>Member Chair</p>
-                                </div>
-                            </a>
-                        </div>
 
-                        <div class="col-lg-4 col-md-4 col-sm-6">
-                            <a href="https://instagram.com/neha2_7">
-                                <div class="team-member">
-                                    <div class="img-container">
-                                        <img class="mx-auto rounded-circle" src="images/members22-23/Neha Bhende.png"
-                                            alt="" />
-                                        <div class="overlay">
-                                            <i class="fab fa-instagram fa-4x fa-fw"></i>
-                                        </div>
-                                        <!-- .overlay -->
-                                    </div>
-                                    <!-- .img-container -->
-                                    <h4>Neha Bhende</h4>
-                                    <p>Vice Chair ACM-W</p>
-                                </div>
-                            </a>
+            <!--Board 2020-->
+            <div id="Board-2021">
+              <div class="v-center">
+                <h2 class="text-white mb-5">2021 Board Members</h2>
+              </div>
+              <div class="row">
+                <div class="col-lg-4 col-md-4 col-sm-6 offset-lg-2 offset-md-2">
+                  <a href="https://www.instagram.com/_vizzz_">
+                    <div class="team-member">
+                      <div class="img-container">
+                        <img
+                          class="mx-auto rounded-circle"
+                          src="images/members19-20/Vishal Pranav.JPG"
+                          alt=""
+                        />
+                        <div class="overlay">
+                          <i class="fab fa-instagram fa-4x fa-fw"></i>
                         </div>
-
-                        <div class="col-lg-4 col-md-4 col-sm-6">
-                            <a href="https://www.linkedin.com/in/poujhit-mu">
-                                <div class="team-member">
-                                    <div class="img-container">
-                                        <img class="mx-auto rounded-circle"
-                                            src="images/ACM Members//Executive members-20210824T130818Z-001/Executive members/Poujhit.jpg"
-                                            alt="" />
-                                        <div class="overlay">
-                                            <i class="fab fa-linkedin-in fa-4x fa-fw"></i>
-                                        </div>
-                                        <!-- .overlay -->
-                                    </div>
-                                    <!-- .img-container -->
-                                    <h4>poujhit MU</h4>
-                                    <p>Webmaster</p>
-                                </div>
-                            </a>
-                        </div>
+                        <!-- .overlay -->
+                      </div>
+                      <!-- .img-container -->
+                      <h4>Vishal Pranav M T</h4>
+                      <p>Chair</p>
                     </div>
-                    <!--Board-->
+                  </a>
                 </div>
-                <!-- EXECUTIVE MEMBERS -->
-                <div id="executive_members" class="type team container-fluid animated fadeIn slower">
-                    <div class="row">
-                        <div class="col-lg-4 col-md-4 col-sm-6 offset-lg-2 offset-md-2">
-                            <a href="https://www.linkedin.com/in/keerthana-s-3a937a1b0">
-                                <div class="team-member">
-                                    <div class="img-container">
-                                        <img class="mx-auto rounded-circle" src="images/members22-23/Keerthana S.png"
-                                            alt="" />
-                                        <div class="overlay">
-                                            <i class="fab fa-linkedin-in fa-4x fa-fw"></i>
-                                        </div>
-                                        <!-- .overlay -->
-                                    </div>
-                                    <!-- .img-container -->
-                                    <h4>Keerthana S </h4>
-                                    <p>Senior Executive Member</p>
-                                </div>
-                            </a>
+                <div class="col-lg-4 col-md-4 col-sm-6">
+                  <a href="https://www.instagram.com/_dhirajv_/">
+                    <div class="team-member">
+                      <div class="img-container">
+                        <img
+                          class="mx-auto rounded-circle"
+                          src="images\ACM Members\Board members-20210824T130729Z-001\Board members\dhiraj.jpg"
+                          alt=""
+                        />
+                        <div class="overlay">
+                          <i class="fab fa-instagram fa-4x fa-fw"></i>
                         </div>
-                        <div class="col-lg-4 col-md-4 col-sm-6">
-                            <a href="https://www.linkedin.com/in/srilekha-y/">
-                                <div class="team-member">
-                                    <div class="img-container">
-                                        <img class="mx-auto rounded-circle" src="images/members22-23/Srilekha Y.png"
-                                            alt="">
-                                        <div class="overlay"><i class="fab fa-linkedin-in fa-4x fa-fw"></i></div>
-                                        <!-- .overlay -->
-                                    </div>
-                                    <!-- .img-container -->
-                                    <h4>Srilekha Y</h4>
-                                    <p>Senior Executive Member</p>
-                                </div>
-                            </a>
-                        </div>
-
-
+                        <!-- .overlay -->
+                      </div>
+                      <!-- .img-container -->
+                      <h4>Dhiraj V</h4>
+                      <p>Vice Chair</p>
                     </div>
-                    <div class="row">
-
-                        <div class="col-lg-4 col-md-4 col-sm-6">
-                            <a href="https://www.linkedin.com/in/sadana-u-1609121b3/">
-                                <div class="team-member">
-                                    <div class="img-container">
-                                        <img class="mx-auto rounded-circle"
-                                            src="images/ACM Members/Executive members-20210824T130818Z-001/Executive members/Sadana U.jpg"
-                                            alt="">
-                                        <div class="overlay"><i class="fab fa-linkedin-in fa-4x fa-fw"></i></div>
-                                        <!-- .overlay -->
-                                    </div>
-                                    <!-- .img-container -->
-                                    <h4>Sadana U</h4>
-                                    <p>Senior Executive Member</p>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="col-lg-4 col-md-4 col-sm-6">
-                            <a href="https://www.linkedin.com/in/rajsudhan-m-12791a204">
-                                <div class="team-member">
-                                    <div class="img-container">
-                                        <img class="mx-auto rounded-circle"
-                                            src="images/ACM Members/Executive members-20210824T130818Z-001/Executive members/Rajsudhan Anand.jpg"
-                                            alt="">
-                                        <div class="overlay"><i class="fab fa-linkedin-in fa-4x fa-fw"></i></div>
-                                        <!-- .overlay -->
-                                    </div>
-                                    <!-- .img-container -->
-                                    <h4>Rajsudhan M</h4>
-                                    <p>Senior Executive Member</p>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="col-lg-4 col-md-4 col-sm-6">
-                            <a href="http://linkedin.com/in/harshitha-jayakumar-76aab21bb">
-                                <div class="team-member">
-                                    <div class="img-container">
-                                        <img class="mx-auto rounded-circle"
-                                            src="images/members22-23/Harshitha - HARSHITHA J CS.png" alt="" />
-                                        <div class="overlay">
-                                            <i class="fab fa-linkedin-in fa-4x fa-fw"></i>
-                                        </div>
-                                        <!-- .overlay -->
-                                    </div>
-                                    <!-- .img-container -->
-                                    <h4>HARSHITHA JAYAKUMAR</h4>
-                                    <p>Senior Executive Member</p>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="col-lg-4 col-md-4 col-sm-6">
-                            <a href="https://www.linkedin.com/in/vaishnavi-manicka-ramesh-598a86244">
-                                <div class="team-member">
-                                    <div class="img-container">
-                                        <img class="rounded-circle" style="object-fit: contain;"
-                                            src="images/members22-23/VAISHNAVI M R AD.png" alt="" />
-                                        <div class="overlay">
-                                            <i class="fab fa-linkedin-in fa-4x fa-fw"></i>
-                                        </div>
-                                        <!-- .overlay -->
-                                    </div>
-                                    <!-- .img-container -->
-                                    <h4>Vaishnavi M R</h4>
-                                    <p>Executive Member</p>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="col-lg-4 col-md-4 col-sm-6">
-                            <a href="https://instagram.com/_devorak">
-                                <div class="team-member">
-                                    <div class="img-container">
-                                        <img class="mx-auto rounded-circle"
-                                            src="images/members22-23/Thejaswini Raghu.png" alt="" />
-                                        <div class="overlay">
-                                            <i class="fab fa-instagram fa-4x fa-fw"></i>
-                                        </div>
-                                        <!-- .overlay -->
-                                    </div>
-                                    <!-- .img-container -->
-                                    <h4>Thejaswini SR</h4>
-                                    <p>Executive Member</p>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="col-lg-4 col-md-4 col-sm-6">
-                            <a href="https://www.linkedin.com/in/tejasvi-bolla-684a5622a">
-                                <div class="team-member">
-                                    <div class="img-container">
-                                        <img class="mx-auto rounded-circle"
-                                            src="images/members22-23/TEJASVI BOLLA CSE.png" alt="" />
-                                        <div class="overlay">
-                                            <i class="fab fa-linkedin-in fa-4x fa-fw"></i>
-                                        </div>
-                                        <!-- .overlay -->
-                                    </div>
-                                    <!-- .img-container -->
-                                    <h4>Tejasvi Bolla</h4>
-                                    <p>Executive Member</p>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="col-lg-4 col-md-4 col-sm-6">
-                            <a href="https://www.linkedin.com/in/shwetha-sadanand-854785239">
-                                <div class="team-member">
-                                    <div class="img-container">
-                                        <img class="mx-auto rounded-circle" style="object-fit: contain;"
-                                            src="images/members22-23/Shwetha S.png" alt="" />
-                                        <div class="overlay">
-                                            <i class="fab fa-linkedin-in fa-4x fa-fw"></i>
-                                        </div>
-                                        <!-- .overlay -->
-                                    </div>
-                                    <!-- .img-container -->
-                                    <h4>Shwetha S</h4>
-                                    <p>Executive Member</p>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="col-lg-4 col-md-4 col-sm-6">
-                            <a href="https://www.linkedin.com/in/nirupama-rangabashyam-33022922a">
-                                <div class="team-member">
-                                    <div class="img-container">
-                                        <img class="mx-auto rounded-circle"
-                                            src="images/members22-23/nirupama rangabashyam.png" alt="" />
-                                        <div class="overlay">
-                                            <i class="fab fa-linkedin-in fa-4x fa-fw"></i>
-                                        </div>
-                                        <!-- .overlay -->
-                                    </div>
-                                    <!-- .img-container -->
-                                    <h4>Nirupama R</h4>
-                                    <p>Executive Member</p>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="col-lg-4 col-md-4 col-sm-6">
-                            <a href="https://www.linkedin.com/in/guru-murthy-k-38631624b">
-                                <div class="team-member">
-                                    <div class="img-container">
-                                        <img class="mx-auto rounded-circle"
-                                            src="images/members22-23/GURU MURTHY K AI _ DS.png" alt="" />
-                                        <div class="overlay">
-                                            <i class="fab fa-linkedin-in fa-4x fa-fw"></i>
-                                        </div>
-                                        <!-- .overlay -->
-                                    </div>
-                                    <!-- .img-container -->
-                                    <h4>Guru murthy K</h4>
-                                    <p>Executive Member</p>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="col-lg-4 col-md-4 col-sm-6">
-                            <a href="https://www.linkedin.com/in/deepika-govindaswamy-b48851244/">
-                                <div class="team-member">
-                                    <div class="img-container">
-                                        <img class="mx-auto rounded-circle" src="images/members22-23/DEEPIKA G CS.png"
-                                            alt="" />
-                                        <div class="overlay">
-                                            <i class="fab fa-linkedin-in fa-4x fa-fw"></i>
-                                        </div>
-                                        <!-- .overlay -->
-                                    </div>
-                                    <!-- .img-container -->
-                                    <h4>Deepika Govindaswamy</h4>
-                                    <p>Executive Member</p>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="col-lg-4 col-md-4 col-sm-6">
-                            <a href="https://www.linkedin.com/in/sreevathsan-venkatesh-731593239">
-                                <div class="team-member">
-                                    <div class="img-container">
-                                        <img class="mx-auto rounded-circle"
-                                            src="images/members22-23/Sreevathsan Venkatesh.png" alt="" />
-                                        <div class="overlay">
-                                            <i class="fab fa-linkedin-in fa-4x fa-fw"></i>
-                                        </div>
-                                        <!-- .overlay -->
-                                    </div>
-                                    <!-- .img-container -->
-                                    <h4>Sreevathsan V</h4>
-                                    <p>Executive Member</p>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="col-lg-4 col-md-4 col-sm-6">
-                            <a href="https://google.com">
-                                <div class="team-member">
-                                    <div class="img-container">
-                                        <img class="mx-auto rounded-circle"
-                                            src="images/members22-23/ESHANTHEKA M CSE.png" alt="" />
-                                        <div class="overlay">
-                                            <i class="fab fa-linkedin-in fa-4x fa-fw"></i>
-                                        </div>
-                                        <!-- .overlay -->
-                                    </div>
-                                    <!-- .img-container -->
-                                    <h4>Eshantheka M </h4>
-                                    <p>Executive Member</p>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="col-lg-4 col-md-4 col-sm-6">
-                            <a href="https://instagram.com/_.hariharan.x?igshid=YzdkMWQ2MWU=">
-                                <div class="team-member">
-                                    <div class="img-container">
-                                        <img class="mx-auto rounded-circle" src="images/members22-23/HARIHARAN M CS.png"
-                                            alt="" />
-                                        <div class="overlay">
-                                            <i class="fab fa-instagram fa-4x fa-fw"></i>
-                                        </div>
-                                        <!-- .overlay -->
-                                    </div>
-                                    <!-- .img-container -->
-                                    <h4>Hariharan Mohan</h4>
-                                    <p>Executive Member</p>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="col-lg-4 col-md-4 col-sm-6">
-                            <a href="https://www.linkedin.com/in/pavadharni-shanmugam-40b210244">
-                                <div class="team-member">
-                                    <div class="img-container">
-                                        <img class="mx-auto rounded-circle"
-                                            src="images/members22-23/PAVADHARNI SHANMUGAM AD.png" alt="" />
-                                        <div class="overlay">
-                                            <i class="fab fa-linkedin-in fa-4x fa-fw"></i>
-                                        </div>
-                                        <!-- .overlay -->
-                                    </div>
-                                    <!-- .img-container -->
-                                    <h4>Pavadharni Shanmugam </h4>
-                                    <p>Executive Member</p>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="col-lg-4 col-md-4 col-sm-6">
-                            <a href="https://www.linkedin.com/in/jai-ganesh-s-ba5999173">
-                                <div class="team-member">
-                                    <div class="img-container">
-                                        <img class="mx-auto rounded-circle" src="images/members22-23/Jai Ganesh.png"
-                                            alt="" />
-                                        <div class="overlay">
-                                            <i class="fab fa-linkedin-in fa-4x fa-fw"></i>
-                                        </div>
-                                        <!-- .overlay -->
-                                    </div>
-                                    <!-- .img-container -->
-                                    <h4>Jai Ganesh </h4>
-                                    <p>Executive Member</p>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="col-lg-4 col-md-4 col-sm-6">
-                            <a href="https://www.linkedin.com/in/sruthi-v-00b821253">
-                                <div class="team-member">
-                                    <div class="img-container">
-                                        <img class="mx-auto rounded-circle" src="images/members22-23/Sruthi v.png"
-                                            alt="" />
-                                        <div class="overlay">
-                                            <i class="fab fa-linkedin-in fa-4x fa-fw"></i>
-                                        </div>
-                                        <!-- .overlay -->
-                                    </div>
-                                    <!-- .img-container -->
-                                    <h4>Sruthi V </h4>
-                                    <p>Executive Member</p>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="col-lg-4 col-md-4 col-sm-6">
-                            <a href="https://www.github.com/devic1">
-                                <div class="team-member">
-                                    <div class="img-container">
-                                        <img class="mx-auto rounded-circle" src="images/members22-23/Deepak Victor.png"
-                                            alt="" />
-                                        <div class="overlay">
-                                            <i class="fab fa-github fa-4x fa-fw"></i>
-                                        </div>
-                                        <!-- .overlay -->
-                                    </div>
-                                    <!-- .img-container -->
-                                    <h4>Deepak Victor</h4>
-                                    <p>Executive Member</p>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="col-lg-4 col-md-4 col-sm-6">
-                            <a href="https://instagram.com/_sathiyavel_?igshid=ZDdkNTZiNTM=">
-                                <div class="team-member">
-                                    <div class="img-container">
-                                        <img class="mx-auto rounded-circle"
-                                            src="images/members22-23/Shree Sathiyavel.png" alt="" />
-                                        <div class="overlay">
-                                            <i class="fab fa-instagram fa-4x fa-fw"></i>
-                                        </div>
-                                        <!-- .overlay -->
-                                    </div>
-                                    <!-- .img-container -->
-                                    <h4>Shree Sathiyavel </h4>
-                                    <p>Executive Member</p>
-                                </div>
-                            </a>
-                        </div>
-
-                        <div class="col-lg-4 col-md-4 col-sm-6">
-                            <a href="https://www.instagram.com/krithika._.21?utm_source=qr">
-                                <div class="team-member">
-                                    <div class="img-container">
-                                        <img class="mx-auto rounded-circle" src="images/members22-23/Krithika S.png"
-                                            alt="" />
-                                        <div class="overlay">
-                                            <i class="fab fa-instagram fa-4x fa-fw"></i>
-                                        </div>
-                                        <!-- .overlay -->
-                                    </div>
-                                    <!-- .img-container -->
-                                    <h4>KRITHIKA S</h4>
-                                    <p>Executive Member</p>
-                                </div>
-                            </a>
-                        </div>
-
-                    </div>
-
+                  </a>
                 </div>
-                <!-- Past Board Members -->
-                <div id="past-board-members" class="type team container-fluid animated fadeIn slower">
-                    <div class="container">
-                        <div id="year-link">
-                            <a href="#Board-2021">2021</a>
-                            <a href="#Board-2020">2020</a>
-                            <a href="#Board-2019">2019</a>
-                            <a href="#Board-2018">2018</a>
+              </div>
+              <div class="row">
+                <div class="col-lg-4 col-md-4 col-sm-6">
+                  <a
+                    href="https://instagram.com/nikhileshh_?igshid=eh0z3vhxfnd9"
+                  >
+                    <div class="team-member">
+                      <div class="img-container">
+                        <img
+                          class="mx-auto rounded-circle"
+                          src="images\ACM Members\Board members-20210824T130729Z-001\Board members\niklesh.jpg"
+                          alt=""
+                        />
+                        <div class="overlay">
+                          <i class="fab fa-instagram fa-4x fa-fw"></i>
                         </div>
+                        <!-- .overlay -->
+                      </div>
+                      <!-- .img-container -->
+                      <h4>S Nikhilesh</h4>
+                      <p>Secretary</p>
                     </div>
-
-                    <!--Board 2020-->
-                    <div id="Board-2021">
-                        <div class="v-center">
-                            <h2 class="text-white mb-5">2021 Board Members</h2>
-                        </div>
-                        <div class="row">
-                            <div class="col-lg-4 col-md-4 col-sm-6 offset-lg-2 offset-md-2">
-                                <a href="https://www.instagram.com/_vizzz_">
-                                    <div class="team-member">
-                                        <div class="img-container">
-                                            <img class="mx-auto rounded-circle"
-                                                src="images/members19-20/Vishal Pranav.JPG" alt="" />
-                                            <div class="overlay">
-                                                <i class="fab fa-instagram fa-4x fa-fw"></i>
-                                            </div>
-                                            <!-- .overlay -->
-                                        </div>
-                                        <!-- .img-container -->
-                                        <h4>Vishal Pranav M T</h4>
-                                        <p>Chair</p>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="col-lg-4 col-md-4 col-sm-6">
-                                <a href="https://www.instagram.com/_dhirajv_/">
-                                    <div class="team-member">
-                                        <div class="img-container">
-                                            <img class="mx-auto rounded-circle"
-                                                src="images\ACM Members\Board members-20210824T130729Z-001\Board members\dhiraj.jpg"
-                                                alt="" />
-                                            <div class="overlay">
-                                                <i class="fab fa-instagram fa-4x fa-fw"></i>
-                                            </div>
-                                            <!-- .overlay -->
-                                        </div>
-                                        <!-- .img-container -->
-                                        <h4>Dhiraj V</h4>
-                                        <p>Vice Chair</p>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-lg-4 col-md-4 col-sm-6">
-                                <a href="https://instagram.com/nikhileshh_?igshid=eh0z3vhxfnd9">
-                                    <div class="team-member">
-                                        <div class="img-container">
-                                            <img class="mx-auto rounded-circle"
-                                                src="images\ACM Members\Board members-20210824T130729Z-001\Board members\niklesh.jpg"
-                                                alt="" />
-                                            <div class="overlay">
-                                                <i class="fab fa-instagram fa-4x fa-fw"></i>
-                                            </div>
-                                            <!-- .overlay -->
-                                        </div>
-                                        <!-- .img-container -->
-                                        <h4>S Nikhilesh</h4>
-                                        <p>Secretary</p>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="col-lg-4 col-md-4 col-sm-6">
-                                <a href="https://www.instagram.com/ashwxniyer/">
-                                    <div class="team-member">
-                                        <div class="img-container">
-                                            <img class="mx-auto rounded-circle"
-                                                src="images\ACM Members\Board members-20210824T130729Z-001\Board members\aswin.jpg"
-                                                alt="" />
-                                            <div class="overlay">
-                                                <i class="fab fa-instagram fa-4x fa-fw"></i>
-                                            </div>
-                                            <!-- .overlay -->
-                                        </div>
-                                        <!-- .img-container -->
-                                        <h4>S Ashwin</h4>
-                                        <p>Treasurer</p>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="col-lg-4 col-md-4 col-sm-6 offset-md-0 offset-sm-3">
-                                <a href="https://www.instagram.com/sandyy_2200/?hl=en">
-                                    <div class="team-member">
-                                        <div class="img-container">
-                                            <img class="mx-auto rounded-circle"
-                                                src="images\ACM Members\Board members-20210824T130729Z-001\Board members\sandhya.jpg"
-                                                alt="" />
-                                            <div class="overlay">
-                                                <i class="fab fa-instagram fa-4x fa-fw"></i>
-                                            </div>
-                                            <!-- .overlay -->
-                                        </div>
-                                        <!-- .img-container -->
-                                        <h4>Sandhya V</h4>
-                                        <p>Member Chair</p>
-                                    </div>
-                                </a>
-                            </div>
-
-                            <div class="col-lg-4 col-md-4 col-sm-6">
-                                <a href="https://instagram.com/benita_majo?igshid=1f8nt822mw9n2">
-                                    <div class="team-member">
-                                        <div class="img-container">
-                                            <img class="mx-auto rounded-circle"
-                                                src="images\ACM Members\Board members-20210824T130729Z-001\Board members\benita.jpg"
-                                                alt="" />
-                                            <div class="overlay">
-                                                <i class="fab fa-instagram fa-4x fa-fw"></i>
-                                            </div>
-                                            <!-- .overlay -->
-                                        </div>
-                                        <!-- .img-container -->
-                                        <h4>Benita Majo C</h4>
-                                        <p>W-Lead/ Creative and Marketing Lead</p>
-                                    </div>
-                                </a>
-                            </div>
-
-                            <div class="col-lg-4 col-md-4 col-sm-6">
-                                <a href="https://www.linkedin.com/in/sreevishal/">
-                                    <div class="team-member">
-                                        <div class="img-container">
-                                            <img class="mx-auto rounded-circle"
-                                                src="images\ACM Members\Board members-20210824T130729Z-001\Board members\WhatsApp Image 2021-08-26 at 12.45.44 AM.jpeg"
-                                                alt="" />
-                                            <div class="overlay">
-                                                <i class="fab fa-linkedin-in fa-4x fa-fw"></i>
-                                            </div>
-                                            <!-- .overlay -->
-                                        </div>
-                                        <!-- .img-container -->
-                                        <h4>Sree Vishal R</h4>
-                                        <p>Webmaster</p>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
-
-                    <!--Board 2020-->
-                    <div id="Board-2020">
-                        <div class="v-center">
-                            <h2 class="text-white mb-5">2020 Board Members</h2>
-                        </div>
-                        <div class="row">
-                            <div class="col-lg-4 col-md-4 col-sm-6">
-                                <a href="http://thekrishna.in">
-                                    <div class="team-member">
-                                        <div class="img-container">
-                                            <img class="rounded-circle" src="images/past_board_members/Krishna XD.jpg"
-                                                alt="" />
-                                            <div class="overlay">
-                                                <i class="fas fa-globe fa-4x fa-fw"></i>
-                                            </div>
-                                            <!-- .overlay -->
-                                        </div>
-                                        <!-- .img-container -->
-                                        <h4>Krishnakanth Alagiri</h4>
-                                        <p>Chair</p>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="col-lg-4 col-md-4 col-sm-6">
-                                <a href="https://www.mahav.me/">
-                                    <div class="team-member">
-                                        <div class="img-container">
-                                            <img class="rounded-circle"
-                                                src="images/members19-20/Mahalakshumi Visvanathan.jpg" width="100%"
-                                                alt="" />
-                                            <div class="overlay">
-                                                <i class="fas fa-globe fa-4x fa-fw"></i>
-                                            </div>
-                                            <!-- .overlay -->
-                                        </div>
-                                        <!-- .img-container -->
-                                        <h4>Mahalakshumi Visvanathan</h4>
-                                        <p>Vice Chair</p>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="col-lg-4 col-md-4 col-sm-6">
-                                <a href="https://www.instagram.com/vickx_10/">
-                                    <div class="team-member">
-                                        <div class="img-container">
-                                            <img class="mx-auto rounded-circle"
-                                                src="images/members19-20/Vignesh Shankar.jpg" alt="" />
-                                            <div class="overlay">
-                                                <i class="fab fa-instagram fa-4x fa-fw"></i>
-                                            </div>
-                                            <!-- .overlay -->
-                                        </div>
-                                        <!-- .img-container -->
-                                        <h4>Vignesh S</h4>
-                                        <p>Webmaster</p>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="col-lg-4 col-md-4 col-sm-6">
-                                <a href="http://instagram.com/pojaa_ramesh">
-                                    <div class="team-member">
-                                        <div class="img-container">
-                                            <img class="mx-auto rounded-circle"
-                                                src="images/members19-20/Pojaa Ramesh.jpg" alt="" />
-                                            <div class="overlay">
-                                                <i class="fab fa-instagram fa-4x fa-fw"></i>
-                                            </div>
-                                            <!-- .overlay -->
-                                        </div>
-                                        <!-- .img-container -->
-                                        <h4>Pojaa Ramesh</h4>
-                                        <p>Secretary</p>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="col-lg-4 col-md-4 col-sm-6">
-                                <a href="https://www.linkedin.com/in/ajay-krishnan-6089a4175">
-                                    <div class="team-member">
-                                        <div class="img-container">
-                                            <img class="rounded-circle" src="images/members19-20/Ajay Krishnan.jpg"
-                                                alt="" />
-                                            <div class="overlay">
-                                                <i class="fab fa-linkedin-in fa-4x fa-fw"></i>
-                                            </div>
-                                            <!-- .overlay -->
-                                        </div>
-                                        <!-- .img-container -->
-                                        <h4>Ajay Krishnan</h4>
-                                        <p>Treasurer</p>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="col-lg-4 col-md-4 col-sm-6">
-                                <a href="https://www.instagram.com/_dhirajv_/">
-                                    <div class="team-member">
-                                        <div class="img-container">
-                                            <img class="mx-auto rounded-circle" src="images/members19-20/Dhiraj V.jpg"
-                                                alt="" />
-                                            <div class="overlay">
-                                                <i class="fab fa-instagram fa-4x fa-fw"></i>
-                                            </div>
-                                            <!-- .overlay -->
-                                        </div>
-                                        <!-- .img-container -->
-                                        <h4>Dhiraj V</h4>
-                                        <p>Member Chair</p>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- End of Board 2020-->
-                    <!-- Board 2019 -->
-                    <div id="Board-2019">
-                        <div class="v-center">
-                            <h2 class="text-white mb-5">2019 Board Members</h2>
-                        </div>
-                        <div class="row">
-                            <div class="col-lg-4 col-md-4 col-sm-6">
-                                <a href="https://www.instagram.com/aishu_9825">
-                                    <div class="team-member">
-                                        <div class="img-container">
-                                            <img class="rounded-circle" src="images/past_board_members/Aishwarya A..jpg"
-                                                alt="" />
-                                            <div class="overlay">
-                                                <i class="fab fa-instagram fa-4x fa-fw"></i>
-                                            </div>
-                                            <!-- .overlay -->
-                                        </div>
-                                        <!-- .img-container -->
-                                        <h4>Aishwarya A</h4>
-                                        <p>Chair</p>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="col-lg-4 col-md-4 col-sm-6">
-                                <a href="https://www.linkedin.com/in/mohamed-anan-681450150">
-                                    <div class="team-member">
-                                        <div class="img-container">
-                                            <img class="rounded-circle" src="images/past_board_members/Mohamed Anan.jpg"
-                                                width="100%" alt="" />
-                                            <div class="overlay">
-                                                <i class="fab fa-linkedin-in fa-4x fa-fw"></i>
-                                            </div>
-                                            <!-- .overlay -->
-                                        </div>
-                                        <!-- .img-container -->
-                                        <h4>Mohamed Anan</h4>
-                                        <p>Vice Chair</p>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="col-lg-4 col-md-4 col-sm-6">
-                                <a href="https://www.linkedin.com/in/yuvaraj-jayavel-304587160/">
-                                    <div class="team-member">
-                                        <div class="img-container">
-                                            <img class="mx-auto rounded-circle"
-                                                src="images/past_board_members/Yuvaraj.jpg" alt="">
-                                            <div class="overlay"><i class="fab fa-linkedin-in fa-4x fa-fw"></i></div>
-                                            <!-- .overlay -->
-                                        </div>
-                                        <!-- .img-container -->
-                                        <h4>Yuvaraj J</h4>
-                                        <p>Webmaster</p>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="col-lg-4 col-md-4 col-sm-6">
-                                <a href="https://www.linkedin.com/in/jashaul-d-364057a6/">
-                                    <div class="team-member">
-                                        <div class="img-container">
-                                            <img class="rounded-circle" src="images/past_board_members/Harini Ashok.jpg"
-                                                alt="" />
-                                            <div class="overlay">
-                                                <i class="fab fa-linkedin-in fa-4x fa-fw"></i>
-                                            </div>
-                                            <!-- .overlay -->
-                                        </div>
-                                        <!-- .img-container -->
-                                        <h4>Harini Ashok</h4>
-                                        <p>Secretary</p>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="col-lg-4 col-md-4 col-sm-6">
-                                <a href="https://www.linkedin.com/in/anirudh-narayan-602505172">
-                                    <div class="team-member">
-                                        <div class="img-container">
-                                            <img class="rounded-circle" src="images/past_board_members/Anirudh.jpg"
-                                                alt="" />
-                                            <div class="overlay">
-                                                <i class="fab fa-linkedin-in fa-4x fa-fw"></i>
-                                            </div>
-                                            <!-- .overlay -->
-                                        </div>
-                                        <!-- .img-container -->
-                                        <h4>Anirudh</h4>
-                                        <p>Treasurer</p>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="col-lg-4 col-md-4 col-sm-6">
-                                <a href="http://thekrishna.in">
-                                    <div class="team-member">
-                                        <div class="img-container">
-                                            <img class="rounded-circle" src="images/past_board_members/Krishna XD.jpg"
-                                                width="100%" alt="" />
-                                            <div class="overlay">
-                                                <i class="fas fa-globe fa-4x fa-fw"></i>
-                                            </div>
-                                            <!-- .overlay -->
-                                        </div>
-                                        <!-- .img-container -->
-                                        <h4>Krishnakanth Alagiri</h4>
-                                        <p>Member Chair</p>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <!--End of board 2019  -->
-                    <!-- Board 2018 -->
-                    <div id="Board-2018">
-                        <div class="v-center">
-                            <h2 class="text-white mb-5">2018 Board Members</h2>
-                        </div>
-                        <div class="row">
-                            <div class="col-lg-4 col-md-4 col-sm-6">
-                                <div class="team-member">
-                                    <div class="img-container">
-                                        <img class="rounded-circle" src="images/past_board_members/Akash Saravanan.jpg"
-                                            alt="" />
-                                    </div>
-                                    <h4>Akash Saravanan</h4>
-                                    <p>Chairman</p>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-4 col-sm-6">
-                                <div class="team-member">
-                                    <img class="rounded-circle" src="images/past_board_members/Aishwarya Ramanathan.jpg"
-                                        alt="" />
-                                    <h4>Aishwarya Ramanathan</h4>
-                                    <p>Vice-Chairman</p>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-4 col-sm-6">
-                                <div class="team-member">
-                                    <img class="mx-auto rounded-circle"
-                                        src="images/past_board_members/A. Sri Vardhamanan.jpg" alt="">
-                                    <h4>A. Sri Vardhamanan</h4>
-                                    <p>Webmaster</p>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-4 col-sm-6">
-                                <div class="team-member">
-                                    <img class="rounded-circle" src="images/past_board_members/Jashaul D.jpg" alt="" />
-                                    <h4>Jashaul D</h4>
-                                    <p>Secretary</p>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-4 col-sm-6">
-                                <div class="team-member">
-                                    <img class="rounded-circle" src="images/past_board_members/Mohamed Anan.jpg"
-                                        width="100%" alt="" />
-                                    <h4>Mohamed Anan</h4>
-                                    <p>Member Chair</p>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-4 col-sm-6">
-                                <div class="team-member">
-                                    <img class="rounded-circle" src="images/past_board_members/Aishwarya A..jpg"
-                                        alt="" />
-                                    <h4>Aishwarya A</h4>
-                                    <p>Treasurer</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- End of Board 2018 -->
+                  </a>
                 </div>
-                <!-- End of past Board members -->
+                <div class="col-lg-4 col-md-4 col-sm-6">
+                  <a href="https://www.instagram.com/ashwxniyer/">
+                    <div class="team-member">
+                      <div class="img-container">
+                        <img
+                          class="mx-auto rounded-circle"
+                          src="images\ACM Members\Board members-20210824T130729Z-001\Board members\aswin.jpg"
+                          alt=""
+                        />
+                        <div class="overlay">
+                          <i class="fab fa-instagram fa-4x fa-fw"></i>
+                        </div>
+                        <!-- .overlay -->
+                      </div>
+                      <!-- .img-container -->
+                      <h4>S Ashwin</h4>
+                      <p>Treasurer</p>
+                    </div>
+                  </a>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-6 offset-md-0 offset-sm-3">
+                  <a href="https://www.instagram.com/sandyy_2200/?hl=en">
+                    <div class="team-member">
+                      <div class="img-container">
+                        <img
+                          class="mx-auto rounded-circle"
+                          src="images\ACM Members\Board members-20210824T130729Z-001\Board members\sandhya.jpg"
+                          alt=""
+                        />
+                        <div class="overlay">
+                          <i class="fab fa-instagram fa-4x fa-fw"></i>
+                        </div>
+                        <!-- .overlay -->
+                      </div>
+                      <!-- .img-container -->
+                      <h4>Sandhya V</h4>
+                      <p>Member Chair</p>
+                    </div>
+                  </a>
+                </div>
+
+                <div class="col-lg-4 col-md-4 col-sm-6">
+                  <a
+                    href="https://instagram.com/benita_majo?igshid=1f8nt822mw9n2"
+                  >
+                    <div class="team-member">
+                      <div class="img-container">
+                        <img
+                          class="mx-auto rounded-circle"
+                          src="images\ACM Members\Board members-20210824T130729Z-001\Board members\benita.jpg"
+                          alt=""
+                        />
+                        <div class="overlay">
+                          <i class="fab fa-instagram fa-4x fa-fw"></i>
+                        </div>
+                        <!-- .overlay -->
+                      </div>
+                      <!-- .img-container -->
+                      <h4>Benita Majo C</h4>
+                      <p>W-Lead/ Creative and Marketing Lead</p>
+                    </div>
+                  </a>
+                </div>
+
+                <div class="col-lg-4 col-md-4 col-sm-6">
+                  <a href="https://www.linkedin.com/in/sreevishal/">
+                    <div class="team-member">
+                      <div class="img-container">
+                        <img
+                          class="mx-auto rounded-circle"
+                          src="images\ACM Members\Board members-20210824T130729Z-001\Board members\WhatsApp Image 2021-08-26 at 12.45.44 AM.jpeg"
+                          alt=""
+                        />
+                        <div class="overlay">
+                          <i class="fab fa-linkedin-in fa-4x fa-fw"></i>
+                        </div>
+                        <!-- .overlay -->
+                      </div>
+                      <!-- .img-container -->
+                      <h4>Sree Vishal R</h4>
+                      <p>Webmaster</p>
+                    </div>
+                  </a>
+                </div>
+              </div>
             </div>
-            <!-- .container -->
-        </section>
-        <!-- Footer -->
-        <footer class="footer">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-6 h-100 text-center text-lg-left my-auto">
-                        <p class="small mb-4 mb-lg-0">
-                            &copy; SVCE-ACM 2022. All Rights Reserved.
-                        </p>
+
+            <!--Board 2020-->
+            <div id="Board-2020">
+              <div class="v-center">
+                <h2 class="text-white mb-5">2020 Board Members</h2>
+              </div>
+              <div class="row">
+                <div class="col-lg-4 col-md-4 col-sm-6">
+                  <a href="http://thekrishna.in">
+                    <div class="team-member">
+                      <div class="img-container">
+                        <img
+                          class="rounded-circle"
+                          src="images/past_board_members/Krishna XD.jpg"
+                          alt=""
+                        />
+                        <div class="overlay">
+                          <i class="fas fa-globe fa-4x fa-fw"></i>
+                        </div>
+                        <!-- .overlay -->
+                      </div>
+                      <!-- .img-container -->
+                      <h4>Krishnakanth Alagiri</h4>
+                      <p>Chair</p>
                     </div>
-                    <div class="col-lg-6 h-100 text-center text-lg-right my-auto">
-                        <ul class="list-inline mb-0">
-                            <li class="list-inline-item mr-3">
-                                <a href="https://www.facebook.com/SVCEACM/">
-                                    <i class="fab fa-facebook fa-2x fa-fw"></i>
-                                </a>
-                            </li>
-                            <li class="list-inline-item mr-3">
-                                <a href="https://www.linkedin.com/company/svceacm">
-                                    <i class="fab fa-linkedin fa-2x fa-fw"></i>
-                                </a>
-                            </li>
-                            <li class="list-inline-item">
-                                <a href="https://www.instagram.com/svceacm/">
-                                    <i class="fab fa-instagram fa-2x fa-fw"></i>
-                                </a>
-                            </li>
-                            <li class="list-inline-item mr-3">
-                                <a href="https://www.youtube.com/channel/UC4TPMqj-kR7DdpNB1ndREMg">
-                                    <i class="fab fa-youtube fa-2x fa-fw"></i>
-                                </a>
-                            </li>
-                            <li class="list-inline-item mr-3">
-                                <a href="https://github.com/SVCE-ACM">
-                                    <i class="fab fa-github fa-2x fa-fw"></i>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
+                  </a>
                 </div>
+                <div class="col-lg-4 col-md-4 col-sm-6">
+                  <a href="https://www.mahav.me/">
+                    <div class="team-member">
+                      <div class="img-container">
+                        <img
+                          class="rounded-circle"
+                          src="images/members19-20/Mahalakshumi Visvanathan.jpg"
+                          width="100%"
+                          alt=""
+                        />
+                        <div class="overlay">
+                          <i class="fas fa-globe fa-4x fa-fw"></i>
+                        </div>
+                        <!-- .overlay -->
+                      </div>
+                      <!-- .img-container -->
+                      <h4>Mahalakshumi Visvanathan</h4>
+                      <p>Vice Chair</p>
+                    </div>
+                  </a>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-6">
+                  <a href="https://www.instagram.com/vickx_10/">
+                    <div class="team-member">
+                      <div class="img-container">
+                        <img
+                          class="mx-auto rounded-circle"
+                          src="images/members19-20/Vignesh Shankar.jpg"
+                          alt=""
+                        />
+                        <div class="overlay">
+                          <i class="fab fa-instagram fa-4x fa-fw"></i>
+                        </div>
+                        <!-- .overlay -->
+                      </div>
+                      <!-- .img-container -->
+                      <h4>Vignesh S</h4>
+                      <p>Webmaster</p>
+                    </div>
+                  </a>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-6">
+                  <a href="http://instagram.com/pojaa_ramesh">
+                    <div class="team-member">
+                      <div class="img-container">
+                        <img
+                          class="mx-auto rounded-circle"
+                          src="images/members19-20/Pojaa Ramesh.jpg"
+                          alt=""
+                        />
+                        <div class="overlay">
+                          <i class="fab fa-instagram fa-4x fa-fw"></i>
+                        </div>
+                        <!-- .overlay -->
+                      </div>
+                      <!-- .img-container -->
+                      <h4>Pojaa Ramesh</h4>
+                      <p>Secretary</p>
+                    </div>
+                  </a>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-6">
+                  <a href="https://www.linkedin.com/in/ajay-krishnan-6089a4175">
+                    <div class="team-member">
+                      <div class="img-container">
+                        <img
+                          class="rounded-circle"
+                          src="images/members19-20/Ajay Krishnan.jpg"
+                          alt=""
+                        />
+                        <div class="overlay">
+                          <i class="fab fa-linkedin-in fa-4x fa-fw"></i>
+                        </div>
+                        <!-- .overlay -->
+                      </div>
+                      <!-- .img-container -->
+                      <h4>Ajay Krishnan</h4>
+                      <p>Treasurer</p>
+                    </div>
+                  </a>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-6">
+                  <a href="https://www.instagram.com/_dhirajv_/">
+                    <div class="team-member">
+                      <div class="img-container">
+                        <img
+                          class="mx-auto rounded-circle"
+                          src="images/members19-20/Dhiraj V.jpg"
+                          alt=""
+                        />
+                        <div class="overlay">
+                          <i class="fab fa-instagram fa-4x fa-fw"></i>
+                        </div>
+                        <!-- .overlay -->
+                      </div>
+                      <!-- .img-container -->
+                      <h4>Dhiraj V</h4>
+                      <p>Member Chair</p>
+                    </div>
+                  </a>
+                </div>
+              </div>
             </div>
-        </footer>
+
+            <!-- End of Board 2020-->
+            <!-- Board 2019 -->
+            <div id="Board-2019">
+              <div class="v-center">
+                <h2 class="text-white mb-5">2019 Board Members</h2>
+              </div>
+              <div class="row">
+                <div class="col-lg-4 col-md-4 col-sm-6">
+                  <a href="https://www.instagram.com/aishu_9825">
+                    <div class="team-member">
+                      <div class="img-container">
+                        <img
+                          class="rounded-circle"
+                          src="images/past_board_members/Aishwarya A..jpg"
+                          alt=""
+                        />
+                        <div class="overlay">
+                          <i class="fab fa-instagram fa-4x fa-fw"></i>
+                        </div>
+                        <!-- .overlay -->
+                      </div>
+                      <!-- .img-container -->
+                      <h4>Aishwarya A</h4>
+                      <p>Chair</p>
+                    </div>
+                  </a>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-6">
+                  <a href="https://www.linkedin.com/in/mohamed-anan-681450150">
+                    <div class="team-member">
+                      <div class="img-container">
+                        <img
+                          class="rounded-circle"
+                          src="images/past_board_members/Mohamed Anan.jpg"
+                          width="100%"
+                          alt=""
+                        />
+                        <div class="overlay">
+                          <i class="fab fa-linkedin-in fa-4x fa-fw"></i>
+                        </div>
+                        <!-- .overlay -->
+                      </div>
+                      <!-- .img-container -->
+                      <h4>Mohamed Anan</h4>
+                      <p>Vice Chair</p>
+                    </div>
+                  </a>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-6">
+                  <a
+                    href="https://www.linkedin.com/in/yuvaraj-jayavel-304587160/"
+                  >
+                    <div class="team-member">
+                      <div class="img-container">
+                        <img
+                          class="mx-auto rounded-circle"
+                          src="images/past_board_members/Yuvaraj.jpg"
+                          alt=""
+                        />
+                        <div class="overlay">
+                          <i class="fab fa-linkedin-in fa-4x fa-fw"></i>
+                        </div>
+                        <!-- .overlay -->
+                      </div>
+                      <!-- .img-container -->
+                      <h4>Yuvaraj J</h4>
+                      <p>Webmaster</p>
+                    </div>
+                  </a>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-6">
+                  <a href="https://www.linkedin.com/in/jashaul-d-364057a6/">
+                    <div class="team-member">
+                      <div class="img-container">
+                        <img
+                          class="rounded-circle"
+                          src="images/past_board_members/Harini Ashok.jpg"
+                          alt=""
+                        />
+                        <div class="overlay">
+                          <i class="fab fa-linkedin-in fa-4x fa-fw"></i>
+                        </div>
+                        <!-- .overlay -->
+                      </div>
+                      <!-- .img-container -->
+                      <h4>Harini Ashok</h4>
+                      <p>Secretary</p>
+                    </div>
+                  </a>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-6">
+                  <a
+                    href="https://www.linkedin.com/in/anirudh-narayan-602505172"
+                  >
+                    <div class="team-member">
+                      <div class="img-container">
+                        <img
+                          class="rounded-circle"
+                          src="images/past_board_members/Anirudh.jpg"
+                          alt=""
+                        />
+                        <div class="overlay">
+                          <i class="fab fa-linkedin-in fa-4x fa-fw"></i>
+                        </div>
+                        <!-- .overlay -->
+                      </div>
+                      <!-- .img-container -->
+                      <h4>Anirudh</h4>
+                      <p>Treasurer</p>
+                    </div>
+                  </a>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-6">
+                  <a href="http://thekrishna.in">
+                    <div class="team-member">
+                      <div class="img-container">
+                        <img
+                          class="rounded-circle"
+                          src="images/past_board_members/Krishna XD.jpg"
+                          width="100%"
+                          alt=""
+                        />
+                        <div class="overlay">
+                          <i class="fas fa-globe fa-4x fa-fw"></i>
+                        </div>
+                        <!-- .overlay -->
+                      </div>
+                      <!-- .img-container -->
+                      <h4>Krishnakanth Alagiri</h4>
+                      <p>Member Chair</p>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <!--End of board 2019  -->
+            <!-- Board 2018 -->
+            <div id="Board-2018">
+              <div class="v-center">
+                <h2 class="text-white mb-5">2018 Board Members</h2>
+              </div>
+              <div class="row">
+                <div class="col-lg-4 col-md-4 col-sm-6">
+                  <div class="team-member">
+                    <div class="img-container">
+                      <img
+                        class="rounded-circle"
+                        src="images/past_board_members/Akash Saravanan.jpg"
+                        alt=""
+                      />
+                    </div>
+                    <h4>Akash Saravanan</h4>
+                    <p>Chairman</p>
+                  </div>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-6">
+                  <div class="team-member">
+                    <img
+                      class="rounded-circle"
+                      src="images/past_board_members/Aishwarya Ramanathan.jpg"
+                      alt=""
+                    />
+                    <h4>Aishwarya Ramanathan</h4>
+                    <p>Vice-Chairman</p>
+                  </div>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-6">
+                  <div class="team-member">
+                    <img
+                      class="mx-auto rounded-circle"
+                      src="images/past_board_members/A. Sri Vardhamanan.jpg"
+                      alt=""
+                    />
+                    <h4>A. Sri Vardhamanan</h4>
+                    <p>Webmaster</p>
+                  </div>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-6">
+                  <div class="team-member">
+                    <img
+                      class="rounded-circle"
+                      src="images/past_board_members/Jashaul D.jpg"
+                      alt=""
+                    />
+                    <h4>Jashaul D</h4>
+                    <p>Secretary</p>
+                  </div>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-6">
+                  <div class="team-member">
+                    <img
+                      class="rounded-circle"
+                      src="images/past_board_members/Mohamed Anan.jpg"
+                      width="100%"
+                      alt=""
+                    />
+                    <h4>Mohamed Anan</h4>
+                    <p>Member Chair</p>
+                  </div>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-6">
+                  <div class="team-member">
+                    <img
+                      class="rounded-circle"
+                      src="images/past_board_members/Aishwarya A..jpg"
+                      alt=""
+                    />
+                    <h4>Aishwarya A</h4>
+                    <p>Treasurer</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- End of Board 2018 -->
+          </div>
+          <!-- End of past Board members -->
+        </div>
+        <!-- .container -->
+      </section>
+      <!-- Footer -->
+      <footer class="footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-6 h-100 text-center text-lg-left my-auto">
+              <p class="small mb-4 mb-lg-0">
+                &copy; SVCE-ACM 2022. All Rights Reserved.
+              </p>
+            </div>
+            <div class="col-lg-6 h-100 text-center text-lg-right my-auto">
+              <ul class="list-inline mb-0">
+                <li class="list-inline-item mr-3">
+                  <a href="https://www.facebook.com/SVCEACM/">
+                    <i class="fab fa-facebook fa-2x fa-fw"></i>
+                  </a>
+                </li>
+                <li class="list-inline-item mr-3">
+                  <a href="https://www.linkedin.com/company/svceacm">
+                    <i class="fab fa-linkedin fa-2x fa-fw"></i>
+                  </a>
+                </li>
+                <li class="list-inline-item">
+                  <a href="https://www.instagram.com/svceacm/">
+                    <i class="fab fa-instagram fa-2x fa-fw"></i>
+                  </a>
+                </li>
+                <li class="list-inline-item mr-3">
+                  <a
+                    href="https://www.youtube.com/channel/UC4TPMqj-kR7DdpNB1ndREMg"
+                  >
+                    <i class="fab fa-youtube fa-2x fa-fw"></i>
+                  </a>
+                </li>
+                <li class="list-inline-item mr-3">
+                  <a href="https://github.com/SVCE-ACM">
+                    <i class="fab fa-github fa-2x fa-fw"></i>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </footer>
     </div>
     <!-- .wrapper -->
     <script src="js/jquery.js"></script>
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/main.js"></script>
     <script>
-        // correctly placing divs for parallax effect
-        $(document).ready(function () {
-            makeParallax($(window).width(), 100);
-            $(window).on("resize", function () {
-                var windowWidth = $(this).width();
-                makeParallax(windowWidth, 100);
-            });
-            switchTabs(".team");
-            outroAnimation(".navbar", ".wrapper");
+      // correctly placing divs for parallax effect
+      $(document).ready(function () {
+        makeParallax($(window).width(), 100);
+        $(window).on('resize', function () {
+          var windowWidth = $(this).width();
+          makeParallax(windowWidth, 100);
         });
+        switchTabs('.team');
+        outroAnimation('.navbar', '.wrapper');
+      });
     </script>
-</body>
-
+  </body>
 </html>
