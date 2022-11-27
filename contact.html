@@ -18,7 +18,8 @@
     <link rel="stylesheet" href="css/global.css">
     <link rel="stylesheet" href="css/nav.css">
     <link rel="stylesheet" href="css/tab.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+        integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.css" />
     <link href="https://fonts.googleapis.com/css?family=Exo+2:400,500,600" rel="stylesheet">
 </head>
@@ -27,20 +28,20 @@
     .page-subtitle {
         color: rgb(131, 206, 226)
     }
-    
+
     #contact-page .wrapper {
         flex-direction: column;
         flex-wrap: wrap
     }
-    
+
     .page-content {
         padding: 50px
     }
-    
+
     .page-content .v-center {
         flex-direction: column
     }
-    
+
     .form-control {
         border: none;
         border-bottom: 2px solid #f0f0f0;
@@ -54,15 +55,15 @@
         width: 60%;
         max-width: 500px
     }
-    
+
     .form-control:focus {
         border-bottom-color: #999
     }
-    
+
     input {
         height: 55px
     }
-    
+
     button#submit {
         background: rgb(9, 53, 122);
         cursor: pointer;
@@ -73,24 +74,24 @@
         width: 190px;
         margin-top: 24px
     }
-    
+
     button#submit:hover {
         font-weight: 700
     }
-    
+
     .fas {
         color: black
     }
-    
+
     a.contact-link {
         color: black;
         text-decoration: underline
     }
-    
+
     a.contact-link:hover {
         color: white
     }
-    
+
     @media (max-width:1024px) {
         .form-control {
             width: 95%
@@ -103,7 +104,9 @@
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top navbar-shrink animated fadeInDown" id="mainNav">
         <div class="container">
             <a class="navbar-brand js-scroll-trigger" href="#page-top"><img src="images/logos/svce_acm_2.png"></a>
-            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+                data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
+                aria-label="Toggle navigation">
                 Menu
             </button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
@@ -151,7 +154,8 @@
                 <form action="/svceacm18-19/test/contact.php" id="contact-form" class="v-center" method="post">
                     <input type="text" class="form-control" name="name" placeholder="Name" required="">
                     <input type="email" class="form-control" name="email" placeholder="Email" required="">
-                    <textarea class="form-control" rows="5" name="message" placeholder="Message" required="" data-gramm_editor="false"></textarea>
+                    <textarea class="form-control" rows="5" name="message" placeholder="Message" required=""
+                        data-gramm_editor="false"></textarea>
                     <button id="submit" type="submit" class="form-control" name="submit">Send Message</button>
                     <?php echo $ma;?>
                 </form>
@@ -165,7 +169,7 @@
                 <div class="row">
                     <div class="col-lg-6 h-100 text-center text-lg-left my-auto">
 
-                        <p class=" small mb-4 mb-lg-0">&copy; ACM 2018. All Rights Reserved.</p>
+                        <p class=" small mb-4 mb-lg-0">&copy; ACM 2022. All Rights Reserved.</p>
                     </div>
                     <div class="col-lg-6 h-100 text-center text-lg-right my-auto">
                         <ul class="list-inline mb-0">
@@ -207,9 +211,9 @@
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/main.js"></script>
     <script>
-        $(document).ready(function() {
+        $(document).ready(function () {
             makeParallax($(window).width(), 100);
-            $(window).on('resize', function() {
+            $(window).on('resize', function () {
                 var windowWidth = $(this).width();
                 makeParallax(windowWidth, 100)
             });
